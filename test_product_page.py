@@ -1,5 +1,6 @@
 import pytest
 from .pages.product_page import ProductPage
+import time
 
 
 def test_guest_can_add_product_to_basket(browser):
@@ -8,7 +9,6 @@ def test_guest_can_add_product_to_basket(browser):
     page.open()
     page.add_product_to_basket()
     page.solve_quiz_and_get_code()
-
-# Ниже должен быть вызов следующих методов:
-#     Метод проверки 1-ого ожидаемого результата (описанный в product_page.py - с двумя assert)
-#     Метод проверки 2-ого ожидаемого результата (описанный в product_page.py - с двумя assert)
+    page.is_book_names_match()
+    page.is_prices_match()
+    time.sleep(30)

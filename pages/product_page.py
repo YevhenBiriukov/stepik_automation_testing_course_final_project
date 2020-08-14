@@ -11,3 +11,13 @@ class ProductPage(BasePage):
         time.sleep(3)
         add_product_to_basket_button.click()
         assert True, "is not"
+
+    def is_book_names_match(self):
+        book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
+        message_book_name = self.browser.find_element(*ProductPageLocators.MESSAGE_BOOK_NAME).text
+        assert book_name in message_book_name, "prices do not match"
+
+    def is_prices_match(self):
+        message_price_text = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
+        book_price_text = self.browser.find_element(*ProductPageLocators.MESSAGE_BOOK_PRICE).text
+        assert message_price_text == book_price_text, "names do not match"
