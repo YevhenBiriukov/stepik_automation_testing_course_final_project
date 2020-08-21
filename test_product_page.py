@@ -34,4 +34,3 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.solve_quiz_and_get_code()
     page.is_book_names_match()
     page.is_prices_match()
-    time.sleep(3)
