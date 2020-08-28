@@ -6,7 +6,7 @@ import time
 
 class BasketPage(BasePage):
     def there_are_no_goods_in_the_basket(self):
-        assert not self.is_not_element_present(*BasketPageLocators.GOODS_ARE_PRESENT_TEXT), \
+        assert self.is_not_element_present(*BasketPageLocators.GOODS_ARE_PRESENT_TEXT), \
             "Goods is presented, but should not be"
 
     def empty_basket_message_is_present(self):

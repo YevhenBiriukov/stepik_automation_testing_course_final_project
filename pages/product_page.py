@@ -9,7 +9,7 @@ class ProductPage(BasePage):
         add_product_to_basket_button = self.browser.find_element(
             *ProductPageLocators.ADD_TO_BASKET_BUTTON)
         add_product_to_basket_button.click()
-        assert True, "is not"
+        assert True, "is not" # я так подозреваю, это нужно исправить?
 
     def is_book_names_match(self):
         book_name = self.browser.find_element(
